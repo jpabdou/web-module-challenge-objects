@@ -235,6 +235,7 @@ Use the carMaker function below to do the following:
 function carMaker(milesDriven) {
     const car = {};
     car.miles = milesDriven;
+    let totalMiles = null;
     car.drive = function (distance) {
       totalMiles = this.miles + distance
       car["miles"] = totalMiles
