@@ -177,9 +177,16 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
- function getReviewByRating(/* code here */) {
-    /* code here */
+ function getReviewByRating(array, rating) {
+  const reviewOutput = [];
+  for (let i = 0; i<array.length;i++) {
+    if (array[i].rating >= 4 && array[i].rating < 5) {
+      reviewOutput.push(array[i])
+    }
   }
+  return reviewOutput
+  }
+
 
   
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
@@ -195,9 +202,16 @@ Use the getLongReviews function below to do the following:
   ]
 */
 
-function getLongReviews(/* code here */) {
-    /* code here */
+function getLongReviews(array) {
+  const reviewOutput = [];
+  for (let i = 0; i<array.length;i++) {
+    if (array[i].feedback.split(" ").length > 15) {
+      reviewOutput.push(array[i])
+    }
   }
+  return reviewOutput
+  }
+
   
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪💪💪💪💪 
@@ -218,11 +232,20 @@ Use the carMaker function below to do the following:
 */
 
 
-function carMaker(/* code here */) {
-    /* code here */
+function carMaker(milesDriven) {
+    const car = {};
+    car.miles = milesDriven;
+    car.drive = function (distance) {
+      totalMiles = this.miles + distance
+      car["miles"] = totalMiles
+      return(totalMiles)
+    }
+    return car
     
 }
-
+let car = carMaker(10)
+console.log(car.drive(100))
+console.log(car.miles)
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
 function foo(){
